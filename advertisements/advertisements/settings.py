@@ -55,7 +55,7 @@ ROOT_URLCONF = 'advertisements.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [Path.joinpath(BASE_DIR), 'templates'],
+        'DIRS': [Path.joinpath(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,9 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'advertisements.wsgi.application'
 
-STATICFILES_DIRS =[
-    Path.joinpath(BASE_DIR, 'static'),
-]
+
 
 
 # Database
@@ -122,7 +120,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-
+STATICFILES_DIRS =[
+    Path.joinpath(BASE_DIR, 'static'),
+]
 
 
 # Default primary key field type

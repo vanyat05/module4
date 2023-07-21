@@ -1,12 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def index(reqest):
-    return render( reqest, "index.html")
+def index(request):
+    return render( request, "index.html")
 
-def lessonFour(reqest):
+def lessonFour(request):
     return HttpResponse("Урок номер 4")
 
-def top_sellers(reqests):
-    return render (reqests, 'top-sellers.html')
+def top_sellers(requests):
+    return render (requests, 'top-sellers.html')
 
