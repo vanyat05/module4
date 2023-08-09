@@ -4,6 +4,7 @@
     <list default="true" id="d9c0fd61-d837-4417-920a-806834009c16" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/advertisements/app_advertisements/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/advertisements/app_advertisements/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/advertisements/app_advertisements/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/advertisements/app_advertisements/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/advertisements/app_advertisements/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/advertisements/app_advertisements/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/advertisements/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/advertisements/db.sqlite3" afterDir="false" />
     </list>
