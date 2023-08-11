@@ -1,6 +1,10 @@
 from django.contrib import admin
 from django.db import models
 from django.utils.html import format_html
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
 
 class Advertisement(models.Model):
     title = models.CharField("заголовок", max_length=128)
@@ -9,6 +13,8 @@ class Advertisement(models.Model):
     auction = models.BooleanField("торг", help_text="Отметьте, если тогр уместен")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User, verbose_name='пользователь', on_delete=models.CASCADE)
+    image = models.ImageField("изображение", upload_to = "advertisements/")
 
     @admin.display(description='дата создания')
     def created_date(self):
