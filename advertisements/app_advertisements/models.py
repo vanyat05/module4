@@ -13,7 +13,7 @@ class Advertisement(models.Model):
     auction = models.BooleanField("торг", help_text="Отметьте, если тогр уместен")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    user = models.ForeignKey(User, verbose_name='пользователь', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, verbose_name='пользователь', on_delete=models.CASCADE,default=1)
     image = models.ImageField("изображение", upload_to = "advertisements/")
 
     @admin.display(description='дата создания')
@@ -30,9 +30,9 @@ class Advertisement(models.Model):
     def updated_date(self):
         from django.utils import timezone
         if self.updated_at.date() == timezone.now().date():
-            created_time = self.updated_at.time().strftime("%H:%M:%S")
+            updated_time = self.updated_at.time().strftime("%H:%M:%S")
             return format_html(
-                '<span style="color: green; font-weight:bold;">Сегодня в {}</span>', created_time
+                '<span style="color: green; font-weight:bold;">Сегодня в {}</span>', updated_time
             )
         return self.updated_at.strftime("%d.%n.%Y в %H:%M:%S")
 
