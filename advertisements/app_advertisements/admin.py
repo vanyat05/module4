@@ -3,7 +3,7 @@ from .models import Advertisement
 
 
 class AdvertisementAdmin(admin.ModelAdmin):
-    list_display =['id', 'title', 'description', 'price', 'created_date', 'auction', 'updated_date', 'image']
+    list_display =['id', 'title', 'description', 'price', 'created_date', 'auction', 'updated_date', 'get_html_image']
     list_filter = ['auction', 'created_at']
     actions = ['action_auction_as_false', 'action_auction_as_true']
     fieldsets = (
@@ -17,11 +17,11 @@ class AdvertisementAdmin(admin.ModelAdmin):
     )
     @admin.action(description = 'Убрать возможность торга')
     def action_auction_as_false(self, request, queryset):
-        queryset.update(auction = False)
+        queryset.update(auction=False)
 
     @admin.action(description='Включить возможность торга')
     def action_auction_as_true(self, request, queryset):
-        queryset.update(auction= True)
+        queryset.update(auction=True)
 
 admin.site.register(Advertisement, AdvertisementAdmin)
 
